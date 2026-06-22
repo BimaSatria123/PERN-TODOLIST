@@ -17,7 +17,7 @@ function App() {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.get(`${API_URL}/todos`);
+      const res = await axios.get("https://localhost:5000/todos");
       setTodos(res.data);
       console.log(res.data);
     } catch (err) {
@@ -37,7 +37,7 @@ function App() {
     if (!description.trim()) return;
     try {
       setError(null);
-      const res = await axios.post(`${API_URL}/todos`, {
+      const res = await axios.post("https://localhost:5000/todos", {
         description: description.trim(),
         completed: false,
       });
@@ -61,7 +61,7 @@ function App() {
         setEditedText("");
         return;
       }
-      await axios.put(`${API_URL}/todos/${id}`, {
+      await axios.put('https://localhost:5000/todos/${id}', {
         description: trimmedText,
       });
       setEditingTodo(null);
@@ -82,7 +82,7 @@ function App() {
   const deleteTodo = async (id) => {
     try {
       setError(null);
-      await axios.delete(`${API_URL}/todos/${id}`);
+      await axios.delete(`https://localhost:5000/todos/${id}`);
       setTodos(todos.filter((todo) => todo.todo_id !== id));
     } catch (err) {
       console.error(err.message);
@@ -94,7 +94,7 @@ function App() {
     try {
       setError(null);
       const todo = todos.find((todo) => todo.todo_id === id);
-      await axios.put(`${API_URL}/todos/${id}`, {
+      await axios.put(`https://localhost:5000}/todos/${id}`, {
         description: todo.description,
         completed: !todo.completed,
       });
