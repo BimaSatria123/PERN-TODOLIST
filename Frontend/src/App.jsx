@@ -94,7 +94,7 @@ function App() {
     try {
       setError(null);
       const todo = todos.find((todo) => todo.todo_id === id);
-      await axios.put(`http://localhost:5000}/todos/${id}`, {
+      await axios.put(`http://localhost:5000/todos/${id}`, {
         description: todo.description,
         completed: !todo.completed,
       });

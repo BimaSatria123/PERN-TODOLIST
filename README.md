@@ -7,13 +7,6 @@ Aplikasi Todo List menggunakan:
 - React.js
 - Node.js
 
-## Struktur Project
-
-```text
-PERN-TODOLIST
-├── Backend
-└── Frontend
-```
 
 ## Menjalankan Backend
 
@@ -34,4 +27,4 @@ npm run dev
 ## Tim
 
 - Backend: Bima
-- Frontend: (Teman)
+- Frontend: Rajendra
